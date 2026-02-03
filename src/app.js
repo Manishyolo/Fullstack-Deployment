@@ -13,6 +13,7 @@ app.get("/api/notes",async(req,res)=>{
     const AllNotes = await noteModel.find();
 
     res.status(200).json({
+        message:"All notes fetched successfully",
         AllNotes:AllNotes
     })
 })
@@ -51,6 +52,7 @@ app.patch("/api/notes/:id",async(req,res)=>{
         updatedNote : updatedNote   
     })
 })
+
 
 app.use("*name",(req,res)=>{
   res.sendFile(path.join(__dirname,"..","/public/index.html"))
