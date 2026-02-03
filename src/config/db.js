@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
-
+const dotenv = require("dotenv");
+dotenv.config();
 
 function ConnectToDb(){
 
-    mongoose.connect("mongodb+srv://manish:HnkkOSsDnK5u7j1g@cluster0.7xhlxtx.mongodb.net/data-2").then(()=>{
+    mongoose.connect(process.env.MONGO_URI).then(()=>{
         console.log("connected to db");
         
     }).catch((err)=>{

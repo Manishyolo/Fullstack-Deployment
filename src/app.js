@@ -8,7 +8,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("./public"))
 
-console.log(__dirname)
 
 app.get("/api/notes",async(req,res)=>{
     const AllNotes = await noteModel.find();
